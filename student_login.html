@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Digital Coaching Platform</title>
+    <link rel="stylesheet" href="student_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="https://via.placeholder.com/100" alt="Logo" class="logo">
+                <h1>Student Login</h1>
+                <p>Welcome back! Please enter your credentials</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Username or Email" required>
+                    </div>
+                    <div class="error-message" id="usernameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>Login</span>
+                    <i class="fas fa-spinner fa-spin loading-icon"></i>
+                </button>
+
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="register-link">
+                    Don't have an account? <a href="student_Registration.html">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            const togglePassword = document.querySelector('.toggle-password');
+            const loginBtn = document.querySelector('.login-btn');
+            const loadingIcon = document.querySelector('.loading-icon');
+
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Form validation
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Username validation
+                if (usernameInput.value.trim() === '') {
+                    usernameError.textContent = 'Username is required';
+                    isValid = false;
+                } else {
+                    usernameError.textContent = '';
+                }
+
+                // Password validation
+                if (passwordInput.value.trim() === '') {
+                    passwordError.textContent = 'Password is required';
+                    isValid = false;
+                } else if (passwordInput.value.length < 6) {
+                    passwordError.textContent = 'Password must be at least 6 characters';
+                    isValid = false;
+                } else {
+                    passwordError.textContent = '';
+                }
+
+                if (isValid) {
+                    // Show loading state
+                    loginBtn.disabled = true;
+                    loadingIcon.style.display = 'inline-block';
+                    loginBtn.querySelector('span').textContent = 'Logging in...';
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Reset form and loading state
+                        loginForm.reset();
+                        loginBtn.disabled = false;
+                        loadingIcon.style.display = 'none';
+                        loginBtn.querySelector('span').textContent = 'Login';
+                        
+                        // Redirect to profile page
+                        window.location.href = 'student_profile.html';
+                    }, 2000);
+                }
+            });
+
+            // Input field focus effects
+            const inputGroups = document.querySelectorAll('.input-group');
+            inputGroups.forEach(group => {
+                const input = group.querySelector('input');
+                input.addEventListener('focus', () => {
+                    group.classList.add('focused');
+                });
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        group.classList.remove('focused');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

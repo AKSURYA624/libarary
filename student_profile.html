@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="student_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://via.placeholder.com/150" alt="Student Avatar">
+                <div class="edit-overlay">
+                    <i class="fas fa-camera"></i> Change Photo
+                </div>
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">John Doe</h1>
+                <p class="profile-title">Computer Science Student</p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">4.8</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Achievements</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Sidebar -->
+            <div class="profile-sidebar">
+                <div class="sidebar-section">
+                    <h2 class="section-title">Contact Information</h2>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>john.doe@example.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 234 567 890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>New York, USA</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Computer Science</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="profile-main">
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="education">Education</button>
+                    <button class="tab-btn" data-tab="projects">Projects</button>
+                    <button class="tab-btn" data-tab="achievements">Achievements</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content active" id="education">
+                    <div class="education-item">
+                        <h3 class="education-title">Bachelor of Science in Computer Science</h3>
+                        <p class="education-meta">University of Technology | 2020 - 2024</p>
+                        <p class="education-description">Specialized in Software Development and Artificial Intelligence. Maintained a GPA of 4.8 throughout the program.</p>
+                    </div>
+                    <div class="education-item">
+                        <h3 class="education-title">High School Diploma</h3>
+                        <p class="education-meta">Tech High School | 2016 - 2020</p>
+                        <p class="education-description">Graduated with honors. Participated in various coding competitions and won several awards.</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="projects">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">E-commerce Website</h3>
+                                <p class="project-description">A full-stack e-commerce platform built with React and Node.js</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">React</span>
+                                    <span class="project-tag">Node.js</span>
+                                    <span class="project-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">AI Chatbot</h3>
+                                <p class="project-description">An intelligent chatbot using Python and Natural Language Processing</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">NLP</span>
+                                    <span class="project-tag">Machine Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="achievements">
+                    <ul class="achievements-list">
+                        <li class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">Hackathon Winner</h3>
+                                <p class="achievement-date">2023</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">Dean's List</h3>
+                                <p class="achievement-date">2022 - 2023</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">Google Developer Certification</h3>
+                                <p class="achievement-date">2021</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab Navigation
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Profile Avatar Edit
+        const editOverlay = document.querySelector('.edit-overlay');
+        const avatarInput = document.createElement('input');
+        avatarInput.type = 'file';
+        avatarInput.accept = 'image/*';
+        avatarInput.style.display = 'none';
+
+        editOverlay.addEventListener('click', () => {
+            avatarInput.click();
+        });
+
+        avatarInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.querySelector('.profile-avatar img').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html> 

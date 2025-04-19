@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - Digital Coaching Platform</title>
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="student_Registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="login-header">
+                    <h2>Student Registration</h2>
+                    <p>Create your student account</p>
+                </div>
+                
+                <form id="studentRegisterForm" class="login-form">
+                    <div class="form-group">
+                        <label for="studentName">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="FatherName">Father Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="FatherName" name="FatherName" placeholder="Enter your father name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="MotherName">Mother Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="MotherName" name="MotherName" placeholder="Enter your mother name" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="RegistrationNumber">Registration Number</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="RegistrationNumber" name="RegistrationNumber" placeholder="Enter your Registration number" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="DateOfBirth">Date Of Birth</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="DateOfBirth" name="DateOfBirth" placeholder="Enter your date of birth" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="Gender">Gender</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-gender"></i>
+                            <input type="text" id="Gender" name="Gender" placeholder="Enter your gender" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentEmail">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentPhone">Phone Number</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="studentPhone" name="studentPhone" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentUsername">Username</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user-circle"></i>
+                            <input type="text" id="studentUsername" name="studentUsername" placeholder="Choose a username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentPassword">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="studentPassword" name="studentPassword" placeholder="Create a password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentClass">Class/Grade</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                            <input type="text" id="studentClass" name="studentClass" placeholder="Enter your class/grade" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentSchool">School/College</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-school"></i>
+                            <input type="text" id="studentSchool" name="studentSchool" placeholder="Enter your school/college name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentImage">Upload Profile Image</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-image"></i>
+                            <input type="file" id="studentImage" name="studentImage" accept="image/*" required>
+                        </div>
+                        <img id="imagePreview" src="#" alt="Image Preview" style="display: none; width: 500px; margin-top: 10px;">
+                    </div>
+                    <script>
+                        document.getElementById('studentImage').addEventListener('change', function(event) {
+                            const [file] = event.target.files;
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    const imagePreview = document.getElementById('imagePreview');
+                                    imagePreview.src = e.target.result;
+                                    imagePreview.style.display = 'block';
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    </script>
+                    <div class="form-group">
+                        <button type="submit" class="login-btn">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <a href="login.html" class="back-to-home">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="library.js"></script>
+</body>
+</html> 
